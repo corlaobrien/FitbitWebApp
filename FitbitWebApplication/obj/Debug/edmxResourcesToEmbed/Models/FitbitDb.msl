@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CloudFitbitDbModelStoreContainer" CdmEntityContainer="CloudFitbitDbEntities">
+    <EntitySetMapping Name="MembershipUsers">
+      <EntityTypeMapping TypeName="CloudFitbitDbModel.MembershipUser">
+        <MappingFragment StoreEntitySet="MembershipUsers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
