@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script>
+    // Make an API request and graph it
+    var processResponse = function (res) {
+        if (!res.ok) {
+            throw new Error('Fitbit API request failed: ' + res);
+        }
+
+        var contentType = res.headers.get('content-type')
+        if (contentType && contentType.indexOf("application/json") !== -1) {
+            return res.json();
+        } else {
+            throw new Error('JSON expected but received ' + contentType);
+        }
+    }
+
+    fetch(
+    'https://api.fitbit.com/1/user/-/profile.json',
+    {
+        headers: new Headers({
+            'Authorization': 'Bearer ' + fitbitAccessToken
+        }),
+        mode: 'cors',
+        method: 'GET'
+    })
+    .then(processResponse)
+    //.then(processUser)
+.catch(function (error) {
+    console.log(error);
+});
+</script>
+
+
+<div class="row">
+    @if(ViewBag.AccessToken != null){
+    <p>Token -- <a id="accessTokenId">@ViewBag.AccessToken.Token</a></p>
+    <p>Token type --    <a id="accessTokenType"> @ViewBag.AccessToken.TokenType</a> </p>
+    <p>Expires In --    <a id="accessTokenExpiration"> @ViewBag.AccessToken.ExpiresIn</a> </p>
+    <p>Refresh token -- <a id="RefreshToken"> @ViewBag.AccessToken.RefreshToken</a> </p>
+    
+
+    }
+    else {
+    <p>The current session has not been authenticated with fitbit</p>
+    }
+
+    <p>
+        @Html.ActionLink("Refresh Token", "RefreshToken", "Fitbit")
+    </p>
+
+    <p>@Html.ActionLink("Test Token", actionName: "TestToken")</p>
+
+</div>

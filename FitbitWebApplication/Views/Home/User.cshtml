@@ -1,0 +1,54 @@
+﻿@using FitbitWebApplication.Controllers
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Fitbit Website</h1>
+    <p class="lead">Research project using Fitbit Wearable Technology - Users Portal</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Log into Fitbit
+        </p>
+        @*<p><a class="btn btn-default" href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=227ZVN&redirect_uri=http://52.211.161.75/FitbitWebsite/CallBack/&scope=activity%20nutrition%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight'">Learn more &raquo;</a></p>*@
+        @*<p><a class="btn btn-default" href="https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=227YKP&redirect_uri=http://localhost:50541/Home/CallBack/&scope=activity%20nutrition%20heartrate%20location%20nutrition%20profile%20settings%20sleep%20social%20weight">Learn more &raquo;</a></p>*@
+
+        <p><a class="btn btn-default" onclick="location.href='@Url.Action("Authorize", "Home")'">Learn more &raquo;</a></p>
+
+    </div>
+
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Sync Fitbit Data
+        </p>
+
+        <p><a class="btn btn-default" onclick="location.href='@Url.Action("SyncFitbitData", "Home")'">Sync</a></p>
+
+    </div>
+
+    <div class="col-md-4">
+        <h2>Advanced</h2>
+        <p>
+            View Heart Rate Chart
+        </p>
+
+        @*<p><a class="btn btn-default" onclick="location.href='@Url.Action("SyncFitbitData", "Home")'">Sync</a></p>*@
+
+    </div>
+
+    @*<div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>*@
+</div>
